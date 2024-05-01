@@ -3,7 +3,7 @@
 - Here's what the previous html looked like
 ``` html
 <div class="quiz">
-  
+
   <h2 class="quiz-question">Q1: How do you spell "Red"?</h2>
   <ul data-quiz-question="1">
     <li class="quiz-answer" data-quiz-answer="a">a. Red</li>
@@ -11,7 +11,7 @@
     <li class="quiz-answer" data-quiz-answer="c">c. Req</li>
     <li class="quiz-answer" data-quiz-answer="d">d. Sed</li>
   </ul>
-  
+
   <h2 class="quiz-question">Q2: How do you spell "Green"?</h2>
   <ul data-quiz-question="2">
     <li class="quiz-answer" data-quiz-answer="a">a. Greeen</li>
@@ -19,7 +19,7 @@
     <li class="quiz-answer" data-quiz-answer="c">c. Gren</li>
     <li class="quiz-answer" data-quiz-answer="d">d. Grenn</li>
   </ul>
-  
+
   <h2 class="quiz-question">Q3: How do you spell "Blue"?</h2>
   <ul data-quiz-question="3">
     <li class="quiz-answer" data-quiz-answer="a">a. Bluue</li>
@@ -27,7 +27,7 @@
     <li class="quiz-answer" data-quiz-answer="c">c. Btue</li>
     <li class="quiz-answer" data-quiz-answer="d">d. Blue</li>
   </ul>
-  
+
   <h2 class="quiz-question">Q4: How do you spell "HTML"?</h2>
   <ul data-quiz-question="4">
     <li class="quiz-answer" data-quiz-answer="a">a. MLTH</li>
@@ -35,7 +35,7 @@
     <li class="quiz-answer" data-quiz-answer="c">c. HTML</li>
     <li class="quiz-answer" data-quiz-answer="d">d. HMTL</li>
   </ul>
-  
+
   <h2 class="quiz-question">Q5: How do you spell "CSS"?</h2>
   <ul data-quiz-question="5">
     <li class="quiz-answer" data-quiz-answer="a">a. ASS</li>
@@ -43,7 +43,7 @@
     <li class="quiz-answer" data-quiz-answer="c">c. ASA</li>
     <li class="quiz-answer" data-quiz-answer="d">d. CSS</li>
   </ul>
-  
+
   <h2 class="quiz-question">Q6: How do you spell "JavaScript"?</h2>
   <ul data-quiz-question="6">
     <li class="quiz-answer" data-quiz-answer="a">a. ScriptJava</li>
@@ -58,7 +58,7 @@
 - And here's what I modified it into
 ``` html
 <div class="quiz">
-  
+
     <h2 class="quiz-question">How are you doing?</h2>
     <ul data-quiz-question="1">
       <li class="quiz-answer" data-quiz-answer="a">a. Great!</li>
@@ -66,31 +66,31 @@
       <li class="quiz-answer" data-quiz-answer="c">c. Meh</li>
       <li class="quiz-answer" data-quiz-answer="d">d. Bad...</li>
     </ul>
-    
+
     <h2 class="quiz-question">That's great to hear! wanna check out my website?</h2>
     <ul data-quiz-question="2">
       <li class="quiz-answer" data-quiz-answer="a">a. Sure!</li>
       <li class="quiz-answer" data-quiz-answer="b">b. No thanks!</li>
     </ul>
-    
+
     <h2 class="quiz-question">That's good to hear, would you like to peep my website?</h2>
     <ul data-quiz-question="3">
       <li class="quiz-answer" data-quiz-answer="a">a. Sure, I'm down!</li>
       <li class="quiz-answer" data-quiz-answer="b">b. No thanks I'm good for now</li>
     </ul>
-    
+
     <h2 class="quiz-question">Fair enough, would you like to see my website?</h2>
     <ul data-quiz-question="4">
       <li class="quiz-answer" data-quiz-answer="a">a. Sure</li>
       <li class="quiz-answer" data-quiz-answer="b">b. No</li>
     </ul>
-    
+
     <h2 class="quiz-question">I'm sorry to hear that mate, want a funny little vid to cheer you up?</h2>
     <ul data-quiz-question="5">
       <li class="quiz-answer" data-quiz-answer="a">a. Yes please...</li>
       <li class="quiz-answer" data-quiz-answer="b">b. Nah, I think I'll be fine</li>
     </ul>
-    
+
     <h2 class="quiz-question">Was that helpful?</h2>
     <ul data-quiz-question="6">
       <li class="quiz-answer" data-quiz-answer="a">a. Yes it was</li>
@@ -103,6 +103,150 @@
       <li class="quiz-answer" data-quiz-answer="b">b. No thanks</li>
     </ul>
   </div>
-  
+
   <div class="quiz-result"></div>
   ```
+  - Next I started messing with the css profile using [the same starter code](https://codepen.io/Tyronita/pen/GBopMG)
+
+  ``` css
+  body {
+  margin:0;
+  padding:20px;
+}
+.quiz {
+  padding:0 30px 20px 30px;
+  max-width:960px;
+  margin:0 auto;
+
+  ul {
+    list-style:none;
+    padding:0;
+    margin:0;
+  }
+}
+.quiz-question {
+  font-weight:bold;
+  display:block;
+  padding:30px 0 10px 0;
+  margin:0;
+}
+.quiz-answer {
+  margin:0;
+  padding:10px;
+  background:#f7f7f7;
+  margin-bottom:5px;
+  cursor: pointer;
+
+  &:hover {
+    background:#eee;
+  }
+
+  &:before {
+    content:"";
+    display:inline-block;
+    width:15px;
+    height:15px;
+    border:1px solid #ccc;
+    background:#fff;
+    vertical-align:middle;
+    margin-right:10px;
+  }
+
+  &.active {
+    &:before {
+      background-color:#333;
+      border-color:#333;
+    }
+  }
+  &.correct {
+    &:before {
+      background-color:green;
+      border-color:green;
+    }
+  }
+  &.incorrect {
+    &:before {
+      background-color:red;
+      border-color:red;
+    }
+  }
+  &.active.correct {
+    &:before {
+      outline: 2px solid green;
+      outline-offset: 2px;
+    }
+  }
+}
+.quiz-result {
+  max-width:960px;
+  margin:0 auto;
+  font-weight:bold;
+  text-align:center;
+  color: #fff;
+  padding:20px;
+
+  &.good {
+    background: green;
+  }
+  &.mid {
+    background: orange;
+  }
+  &.bad {
+    background: red;
+  }
+}
+```
+- Then I just gutted the bits about right and wrong answers.
+``` CSS
+body {
+    margin:0;
+    padding:20px;
+  }
+  .quiz {
+    padding:0 30px 20px 30px;
+    max-width:960px;
+    margin:0 auto;
+
+    ul {
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+  }
+  .quiz-question {
+    font-weight:bold;
+    display:block;
+    padding:30px 0 10px 0;
+    margin:0;
+  }
+  .quiz-answer {
+    margin:0;
+    padding:10px;
+    background:#f7f7f7;
+    margin-bottom:5px;
+    cursor: pointer;
+
+    &:hover {
+      background:#eee;
+    }
+
+    &:before {
+      content:"";
+      display:inline-block;
+      width:15px;
+      height:15px;
+      border:1px solid #ccc;
+      background:#fff;
+      vertical-align:middle;
+      margin-right:10px;
+    }
+
+    &.active {
+      &:before {
+        background-color:#333;
+        border-color:#333;
+      }
+      }
+    }
+  ```
+  
