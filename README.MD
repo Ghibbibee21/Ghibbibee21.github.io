@@ -307,7 +307,7 @@ body {
 - [1](https://gomakethings.com/four-different-ways-to-inject-text-and-html-into-an-element-with-vanilla-javascript/)
 - [2](https://stackoverflow.com/questions/4426184/how-to-go-from-one-page-to-another-page-using-javascript)
 - [3](https://stackoverflow.com/questions/69629809/automatically-close-html-page)
-In the end this is the javascript code that was made
+- In the end this is the javascript code that was made
 
 ``` javascript
 
@@ -375,3 +375,6 @@ function closeTab(){
 /*function showVid(){
   console.log ('legos')
 }*/
+```
+- Now there's the issue of the stylesheet
+- Truth be told, I ended up just scrapping the stylesheet from earlier 
