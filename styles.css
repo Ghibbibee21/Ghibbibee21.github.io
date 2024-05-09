@@ -1,0 +1,18 @@
+body {
+  background-color: rgb(60, 1, 74);
+}
+
+h2 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-family: sans-serif;
+  font-size: 40px;
+}
+
+.my-button {
+  display: block;
+  margin: auto;
+}

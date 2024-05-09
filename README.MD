@@ -378,3 +378,21 @@ function closeTab(){
 ```
 - Now there's the issue of the stylesheet
 - Truth be told, I ended up just scrapping the stylesheet from earlier 
+- Instead, I opted to just reference the [class example website](https://github.com/rdwrome/rdwrome.github.io/blob/master/index.html) for the css profile stuff
+- I also had to change my html to this
+```html
+<head>
+  <script type = "text/javascript" src="app.js"></script>
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="quiz">
+  <h2 class="quiz-question">How are you doing?</h2>
+    <input id="clickMe" type="button" value="Great!" onclick="loadQ2();" />
+    <input id="clickMe" type="button" value="Okay!" onclick="loadQ3();" />
+    <input id="clickMe" type="button" value="Meh" onclick="loadQ4();" />
+    <input id="clickMe" type="button" value="Bad..." onclick="loadQ5();" />
+</div>
+
+</body>
+```
