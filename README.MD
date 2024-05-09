@@ -250,3 +250,55 @@ body {
     }
   ```
   
+- Next, I turned all the answer options into buttons
+```html
+<div class="quiz">
+  
+    <h2 class="quiz-question">How are you doing?</h2>
+    <ul data-quiz-question="1">
+      <input id="clickMe" type="button" value="Great!" onclick="doFunction();" />
+      <input id="clickMe" type="button" value="Okay!" onclick="doFunction();" />
+      <input id="clickMe" type="button" value="Meh" onclick="doFunction();" />
+      <input id="clickMe" type="button" value="Bad..." onclick="doFunction();" />
+    </ul>
+    
+    <h2 class="quiz-question">That's great to hear! wanna check out my website?</h2>
+    <ul data-quiz-question="2">
+      <input id="clickMe" type="button" value="Sure!" onclick="doFunction();" />
+      <input id="clickMe" type="button" value="No Thanks!" onclick="doFunction();" />
+    </ul>
+    
+    <h2 class="quiz-question">That's good to hear, would you like to peep my website?</h2>
+    <ul data-quiz-question="3">
+      <input id="clickMe" type="button" value="Sure, I'm down!" onclick="doFunction();" />
+      <input id="clickMe" type="button" value="No thanks, I'm good for now!" onclick="doFunction();" />
+    </ul>
+    
+    <h2 class="quiz-question">Fair enough, would you like to see my website?</h2>
+    <ul data-quiz-question="4">
+      <input id="clickMe" type="button" value="Sure" onclick="doFunction();" />
+      <input id="clickMe" type="button" value="No" onclick="doFunction();" />
+    </ul>
+    
+    <h2 class="quiz-question">I'm sorry to hear that mate, want a funny little vid to cheer you up?</h2>
+    <ul data-quiz-question="5">
+      <input id="clickMe" type="button" value="Yes please..." onclick="doFunction();" />
+      <input id="clickMe" type="button" value="Nah, I think I'll be fine" onclick="doFunction();" />
+    </ul>
+    
+    <h2 class="quiz-question">Was that helpful?</h2>
+    <ul data-quiz-question="6">
+      <input id="clickMe" type="button" value="Yes it was" onclick="doFunction();" />
+      <input id="clickMe" type="button" value="Not really..." onclick="doFunction();" />
+    </ul>
+
+    <h2 class="quiz-question">Happy to hear! Now another question, would you like to see my website?</h2>
+    <ul data-quiz-question="7">
+      <input id="clickMe" type="button" value="Sure sure" onclick="doFunction();" />
+      <input id="clickMe" type="button" value="No thanks" onclick="doFunction();" />
+    </ul>
+  </div>
+  
+  <div class="quiz-result"></div>
+```
+- I found out how via [this website](https://stackoverflow.com/questions/1947263/using-an-html-button-to-call-a-javascript-function)
